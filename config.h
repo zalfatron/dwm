@@ -59,8 +59,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = { "brave", NULL };
+/*static const char *browsercmd[] = { "tabbed", "-c", "surf", "-e", NULL };*/
 static const char *screenshotcmd[] = { "shotgun", NULL };
-static const char *minecraftcmd[] = { "minecraft-launcher", NULL };
+/*static const char *minecraftcmd[] = { "minecraft-launcher", NULL };*/
 static const char *fmanagercmd[] = { "st", "ranger", NULL };
 
 static Key keys[] = {
@@ -69,7 +70,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd  } },
 	{ MODKEY|ShiftMask,				XK_b,	   spawn,		   {.v = browsercmd}},
 	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = screenshotcmd}},
-	{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd}},
+	/*{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd}},*/
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd}},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
