@@ -17,7 +17,6 @@ static const char *colors[][3]      = {
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
-
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -63,6 +62,7 @@ static const char *browsercmd[] = { "brave", NULL };
 static const char *screenshotcmd[] = { "shotgun", NULL };
 /*static const char *minecraftcmd[] = { "minecraft-launcher", NULL };*/
 static const char *fmanagercmd[] = { "st", "ranger", NULL };
+static const char *touchscreen[] = { "enable-disable-touch", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -70,6 +70,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd  } },
 	{ MODKEY|ShiftMask,				XK_b,	   spawn,		   {.v = browsercmd}},
 	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = screenshotcmd}},
+	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = touchscreen}},
 	/*{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd}},*/
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd}},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },

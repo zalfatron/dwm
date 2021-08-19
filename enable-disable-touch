@@ -1,0 +1,10 @@
+#!/bin/bash
+
+status=$(xinput list-props 8 | grep 'Device Enabled (169):'| sed 's/\tDevice Enabled (169):\t//')
+if [ "$status" -eq 1 ]; then
+xinput disable 8
+echo disabled
+else
+xinput enable 8
+echo enabled
+fi
