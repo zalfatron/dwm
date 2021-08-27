@@ -68,15 +68,15 @@ static const char *rebootcmd[] = { "reboot", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,						XK_q,	   spawn,		   {.v = shutdowncmd } },
 	{ MODKEY,						XK_r,	   spawn,		   {.v = rebootcmd } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd  } },
-	{ MODKEY|ShiftMask,				XK_b,	   spawn,		   {.v = browsercmd}},
-	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = screenshotcmd}},
-	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = touchscreencmd}},
-	/*{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd}},*/
-	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd}},
+	{ MODKEY,						XK_p,	   spawn,		   {.v = dmenucmd } },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,				XK_b,	   spawn,		   {.v = browsercmd } },
+	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = screenshotcmd } },
+	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = touchscreencmd } },
+	/*{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd } },*/
+	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
