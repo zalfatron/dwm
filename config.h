@@ -62,15 +62,19 @@ static const char *browsercmd[] = { "brave", NULL };
 static const char *screenshotcmd[] = { "shotgun", NULL };
 /*static const char *minecraftcmd[] = { "minecraft-launcher", NULL };*/
 static const char *fmanagercmd[] = { "st", "ranger", NULL };
-static const char *touchscreen[] = { "enable-disable-touch", NULL };
+static const char *touchscreencmd[] = { "manage-touch", "ed", NULL };
+static const char *shutdowncmd[] = { "shutdown", "-h", "now", NULL};
+static const char *rebootcmd[] = { "reboot", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,						XK_q,	   spawn,		   {.v = shutdowncmd } },
+	{ MODKEY,						XK_r,	   spawn,		   {.v = rebootcmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd  } },
 	{ MODKEY|ShiftMask,				XK_b,	   spawn,		   {.v = browsercmd}},
 	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = screenshotcmd}},
-	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = touchscreen}},
+	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = touchscreencmd}},
 	/*{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd}},*/
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd}},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
