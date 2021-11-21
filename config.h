@@ -28,6 +28,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+	{ "Steam",    NULL,       NULL,       0,            1,           -1 },
 };
 
 /* layout(s) */
@@ -56,26 +57,25 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "urxvt", NULL };
 static const char *browsercmd[] = { "brave", NULL };
-/*static const char *browsercmd[] = { "tabbed", "-c", "surf", "-e", NULL };*/
 static const char *screenshotcmd[] = { "shotgun", NULL };
-/*static const char *minecraftcmd[] = { "minecraft-launcher", NULL };*/
-static const char *fmanagercmd[] = { "st", "ranger", NULL };
+static const char *minecraftcmd[] = { "minecraft-launcher", NULL };
+static const char *fmanagercmd[] = { "urxvt", "ranger", NULL };
 static const char *touchscreencmd[] = { "manage-touch", "ed", NULL };
 static const char *shutdowncmd[] = { "shutdown", "-h", "now", NULL};
 static const char *rebootcmd[] = { "reboot", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
-	{ MODKEY,						XK_q,	   spawn,		   {.v = shutdowncmd } },
-	{ MODKEY,						XK_r,	   spawn,		   {.v = rebootcmd } },
+	{ MODKEY|ControlMask,			XK_q,	   spawn,		   {.v = shutdowncmd } },
+	{ MODKEY|ControlMask,			XK_r,	   spawn,		   {.v = rebootcmd } },
 	{ MODKEY,						XK_p,	   spawn,		   {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,				XK_b,	   spawn,		   {.v = browsercmd } },
 	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = touchscreencmd } },
-	/*{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd } },*/
+	{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd } },
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
