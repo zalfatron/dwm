@@ -68,6 +68,7 @@ static const char *shutdowncmd[] = { "shutdown", "-h", "now", NULL };
 static const char *rebootcmd[] = { "reboot", NULL };
 static const char *lockcmd[] = { "xlock", "-mode", "sierpinski3d", NULL };
 static const char *sessionmgrcmd[] = { "session-manager", NULL };
+static const char *audiocontrollercmd[] = { "urxt", "-e", "pulsemixer", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -81,6 +82,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd } },
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = sessionmgrcmd } },
+	{ MODKEY,                       XK_a,      spawn,          {.v = audiocontrollercmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
