@@ -66,9 +66,10 @@ static const char *fmanagercmd[] = { "urxvt", "-e", "ranger", NULL };
 static const char *touchscreencmd[] = { "manage-touch", "ed", NULL };
 static const char *shutdowncmd[] = { "shutdown", "-h", "now", NULL };
 static const char *rebootcmd[] = { "reboot", NULL };
-static const char *lockcmd[] = { "xlock", "-mode", "sierpinski3d", NULL };
+static const char *lockcmd[] = { "xsecurelock", NULL };
 static const char *sessionmgrcmd[] = { "session-manager", NULL };
-static const char *audiocontrollercmd[] = { "urxt", "-e", "pulsemixer", NULL };
+static const char *audiocontrollercmd[] = { "urxt", "-e", "alsamixer", NULL };
+static const char *torrentcmd[] = { "tansmission-gtk", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -79,6 +80,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,				XK_b,	   spawn,		   {.v = browsercmd } },
 	{ MODKEY|ShiftMask,				XK_s,	   spawn,		   {.v = screenshotcmd } },
 	{ MODKEY|ShiftMask,				XK_t,	   spawn,		   {.v = touchscreencmd } },
+	{ MODKEY,						XK_t,	   spawn,		   {.v = torrentcmd } },
 	{ MODKEY|ShiftMask,			    XK_m,	   spawn,		   {.v = minecraftcmd } },
 	{ MODKEY|ShiftMask,				XK_e,	   spawn,		   {.v = fmanagercmd } },
 	{ MODKEY,                       XK_x,      spawn,          {.v = sessionmgrcmd } },
